@@ -13,6 +13,7 @@
 		60CA95DA29EDBFA300D9C041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CA95D929EDBFA300D9C041 /* Assets.xcassets */; };
 		60D6415A2A10A70200769755 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641592A10A70200769755 /* SplashController.swift */; };
 		60D641642A10DC2600769755 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641632A10DC2600769755 /* HomeController.swift */; };
+		60D641682A11646100769755 /* OptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641672A11646100769755 /* OptionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		60CA95DE29EDBFA300D9C041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60D641592A10A70200769755 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		60D641632A10DC2600769755 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		60D641672A11646100769755 /* OptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				60CA95DE29EDBFA300D9C041 /* Info.plist */,
 				60D641592A10A70200769755 /* SplashController.swift */,
 				60D641632A10DC2600769755 /* HomeController.swift */,
+				60D641672A11646100769755 /* OptionController.swift */,
 			);
 			path = "Ios CW";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D641682A11646100769755 /* OptionController.swift in Sources */,
 				60D6415A2A10A70200769755 /* SplashController.swift in Sources */,
 				60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */,
 				60D641642A10DC2600769755 /* HomeController.swift in Sources */,
