@@ -10,8 +10,9 @@
 		60CA95D129EDBFA200D9C041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D029EDBFA200D9C041 /* AppDelegate.swift */; };
 		60CA95D329EDBFA200D9C041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D229EDBFA200D9C041 /* SceneDelegate.swift */; };
 		60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D429EDBFA200D9C041 /* ViewController.swift */; };
-		60CA95D829EDBFA200D9C041 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60CA95D629EDBFA200D9C041 /* Main.storyboard */; };
 		60CA95DA29EDBFA300D9C041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CA95D929EDBFA300D9C041 /* Assets.xcassets */; };
+		60D6415A2A10A70200769755 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641592A10A70200769755 /* SplashController.swift */; };
+		60D641642A10DC2600769755 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641632A10DC2600769755 /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +20,10 @@
 		60CA95D029EDBFA200D9C041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60CA95D229EDBFA200D9C041 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		60CA95D429EDBFA200D9C041 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		60CA95D729EDBFA200D9C041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60CA95D929EDBFA300D9C041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60CA95DE29EDBFA300D9C041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60D641592A10A70200769755 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		60D641632A10DC2600769755 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +59,10 @@
 				60CA95D029EDBFA200D9C041 /* AppDelegate.swift */,
 				60CA95D229EDBFA200D9C041 /* SceneDelegate.swift */,
 				60CA95D429EDBFA200D9C041 /* ViewController.swift */,
-				60CA95D629EDBFA200D9C041 /* Main.storyboard */,
 				60CA95D929EDBFA300D9C041 /* Assets.xcassets */,
 				60CA95DE29EDBFA300D9C041 /* Info.plist */,
+				60D641592A10A70200769755 /* SplashController.swift */,
+				60D641632A10DC2600769755 /* HomeController.swift */,
 			);
 			path = "Ios CW";
 			sourceTree = "<group>";
@@ -122,7 +125,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				60CA95DA29EDBFA300D9C041 /* Assets.xcassets in Resources */,
-				60CA95D829EDBFA200D9C041 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,24 +135,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D6415A2A10A70200769755 /* SplashController.swift in Sources */,
 				60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */,
+				60D641642A10DC2600769755 /* HomeController.swift in Sources */,
 				60CA95D129EDBFA200D9C041 /* AppDelegate.swift in Sources */,
 				60CA95D329EDBFA200D9C041 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		60CA95D629EDBFA200D9C041 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60CA95D729EDBFA200D9C041 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		60CA95DF29EDBFA300D9C041 /* Debug */ = {
