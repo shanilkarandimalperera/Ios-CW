@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603172F12A12A46700A9812C /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603172F02A12A46700A9812C /* StartController.swift */; };
 		60CA95D129EDBFA200D9C041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D029EDBFA200D9C041 /* AppDelegate.swift */; };
 		60CA95D329EDBFA200D9C041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D229EDBFA200D9C041 /* SceneDelegate.swift */; };
 		60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D429EDBFA200D9C041 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		603172F02A12A46700A9812C /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		60CA95CD29EDBFA200D9C041 /* Ios CW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ios CW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60CA95D029EDBFA200D9C041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60CA95D229EDBFA200D9C041 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				60D641592A10A70200769755 /* SplashController.swift */,
 				60D641632A10DC2600769755 /* HomeController.swift */,
 				60D641672A11646100769755 /* OptionController.swift */,
+				603172F02A12A46700A9812C /* StartController.swift */,
 			);
 			path = "Ios CW";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */,
 				60D641642A10DC2600769755 /* HomeController.swift in Sources */,
 				60CA95D129EDBFA200D9C041 /* AppDelegate.swift in Sources */,
+				603172F12A12A46700A9812C /* StartController.swift in Sources */,
 				60CA95D329EDBFA200D9C041 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -194,6 +194,12 @@ class HomeController: UIViewController {
         return button
     }()
 
+//    let bmi : UILabel = {
+//        let bmi = UILabel()
+//        bmi.text = "Select Your bmi:"
+//        bmi.translatesAutoresizingMaskIntoConstraints = false
+//        return bmi
+//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -202,16 +208,12 @@ class HomeController: UIViewController {
         addConstrains()
         setupConstraints()
         
+        //nextbutton.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
         nextbutton.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    @objc func goToNext(){
-        let vc = OptionController()
-        navigationController?.pushViewController(vc, animated: true)
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -239,6 +241,34 @@ class HomeController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    //calculate bmi
+    @objc func goToNext() {
+        guard let nameText = name.text,
+              let heightText = height.text,
+              let weightText = weight.text else {
+            return
+        }
+        
+        if let heightValue = Double(heightText),
+           let weightValue = Double(weightText) {
+            let bmiValue = calculateBMIValue(height: heightValue, weight: weightValue)
+            
+            let startController = StartController()
+            startController.name = nameText
+            startController.bmiValue = bmiValue
+            
+            navigationController?.pushViewController(startController, animated: true)
+        } else {
+            // Handle invalid height or weight
+        }
+    }
+        
+        private func calculateBMIValue(height: Double, weight: Double) -> Double {
+            let heightInMeters = height / 100.0 // Convert height from cm to meters
+            let bmiValue = weight / (heightInMeters * heightInMeters)
+            return bmiValue
+        }
     
     //Add Constrain
     func addConstrains(){
@@ -319,8 +349,6 @@ class HomeController: UIViewController {
         nextbutton.topAnchor.constraint(equalTo: Hstackw.bottomAnchor, constant: 20).isActive = true
         nextbutton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
         nextbutton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        
-        
     }
     
 
