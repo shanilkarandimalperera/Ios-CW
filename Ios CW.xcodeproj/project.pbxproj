@@ -12,9 +12,12 @@
 		60CA95D329EDBFA200D9C041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D229EDBFA200D9C041 /* SceneDelegate.swift */; };
 		60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA95D429EDBFA200D9C041 /* ViewController.swift */; };
 		60CA95DA29EDBFA300D9C041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CA95D929EDBFA300D9C041 /* Assets.xcassets */; };
+		60D35C7B2A13F9A2006D9C93 /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D35C7A2A13F9A2006D9C93 /* IntroController.swift */; };
+		60D35C7E2A140666006D9C93 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D35C7D2A140666006D9C93 /* ScheduleController.swift */; };
 		60D6415A2A10A70200769755 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641592A10A70200769755 /* SplashController.swift */; };
 		60D641642A10DC2600769755 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641632A10DC2600769755 /* HomeController.swift */; };
 		60D641682A11646100769755 /* OptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D641672A11646100769755 /* OptionController.swift */; };
+		60E45F942A153FCA00316E0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E45F932A153FC900316E0B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +28,12 @@
 		60CA95D429EDBFA200D9C041 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		60CA95D929EDBFA300D9C041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60CA95DE29EDBFA300D9C041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60D35C7A2A13F9A2006D9C93 /* IntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
+		60D35C7D2A140666006D9C93 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		60D641592A10A70200769755 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		60D641632A10DC2600769755 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		60D641672A11646100769755 /* OptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionController.swift; sourceTree = "<group>"; };
+		60E45F932A153FC900316E0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 				60D641632A10DC2600769755 /* HomeController.swift */,
 				60D641672A11646100769755 /* OptionController.swift */,
 				603172F02A12A46700A9812C /* StartController.swift */,
+				60D35C7A2A13F9A2006D9C93 /* IntroController.swift */,
+				60D35C7D2A140666006D9C93 /* ScheduleController.swift */,
+				60E45F932A153FC900316E0B /* GoogleService-Info.plist */,
 			);
 			path = "Ios CW";
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60CA95DA29EDBFA300D9C041 /* Assets.xcassets in Resources */,
+				60E45F942A153FCA00316E0B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D35C7B2A13F9A2006D9C93 /* IntroController.swift in Sources */,
 				60D641682A11646100769755 /* OptionController.swift in Sources */,
+				60D35C7E2A140666006D9C93 /* ScheduleController.swift in Sources */,
 				60D6415A2A10A70200769755 /* SplashController.swift in Sources */,
 				60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */,
 				60D641642A10DC2600769755 /* HomeController.swift in Sources */,

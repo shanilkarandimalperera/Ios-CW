@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     }
     
     @objc func goToNext(){
-        let vc = HomeController()
+        let vc = IntroController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
