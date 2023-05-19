@@ -183,6 +183,37 @@ class HomeController: UIViewController {
         return gender
     }()
     
+    let goallabel : UILabel = {
+        let genderlabel = UILabel()
+        genderlabel.text = "Select Your Goal:"
+        genderlabel.translatesAutoresizingMaskIntoConstraints = false
+        return genderlabel
+    }()
+    let selectgoalButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Select Goal", for: .normal)
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 10
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(showGoalOptions), for: .touchUpInside)
+        return button
+    }()
+    
+    let goal: UITextField = {
+        let goal = UITextField()
+        goal.translatesAutoresizingMaskIntoConstraints = false
+        goal.borderStyle = .roundedRect
+        goal.layer.borderWidth = 1.0
+        goal.layer.cornerRadius = 10.0
+        goal.layer.borderColor = UIColor.blue.cgColor
+        goal.isUserInteractionEnabled = false
+        goal.inputView = nil
+        goal.inputAccessoryView = nil
+        goal.becomeFirstResponder()
+        return goal
+    }()
+    
     let nextbutton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -242,11 +273,34 @@ class HomeController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    @objc func showGoalOptions() {
+        let alertController = UIAlertController(title: "Select Your Goal", message: nil, preferredStyle: .actionSheet)
+        
+        let fitAction = UIAlertAction(title: "Fitness", style: .default) { _ in
+            self.goal.text = "Fitness" // Set the selected option into the gender text field
+        }
+        alertController.addAction(fitAction)
+        
+        let fatAction = UIAlertAction(title: "Fat Burn", style: .default) { _ in
+            self.goal.text = "Fat Burn" // Set the selected option into the gender text field
+        }
+        alertController.addAction(fatAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     //calculate bmi
     @objc func goToNext() {
         guard let nameText = name.text,
               let heightText = height.text,
-              let weightText = weight.text else {
+              let weightText = weight.text,
+              let agetext = age.text,
+              let goaltext = goal.text,
+              let gendertext = gender.text
+        else {
             return
         }
         
@@ -257,6 +311,9 @@ class HomeController: UIViewController {
             let startController = StartController()
             startController.name = nameText
             startController.bmiValue = bmiValue
+            startController.age = agetext
+            startController.goal = goaltext
+            startController.gender = gendertext
             
             navigationController?.pushViewController(startController, animated: true)
         } else {
@@ -290,6 +347,9 @@ class HomeController: UIViewController {
         Hstackw.addArrangedSubview(weightvalue)
         view.addSubview(Hstackw)
         view.addSubview(nextbutton)
+        view.addSubview(goallabel)
+        view.addSubview(selectgoalButton)
+        view.addSubview(goal)
     }
 
 
@@ -330,7 +390,19 @@ class HomeController: UIViewController {
         gender.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
         gender.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
         
-        heightlabel.topAnchor.constraint(equalTo: gender.bottomAnchor, constant: 30).isActive = true
+        goallabel.topAnchor.constraint(equalTo: gender.bottomAnchor, constant: 10).isActive = true
+        goallabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        goallabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        
+        selectgoalButton.topAnchor.constraint(equalTo: goallabel.bottomAnchor, constant: 10).isActive = true
+        selectgoalButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        selectgoalButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        
+        goal.topAnchor.constraint(equalTo: selectgoalButton.bottomAnchor, constant: 10).isActive = true
+        goal.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        goal.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        
+        heightlabel.topAnchor.constraint(equalTo: goal.bottomAnchor, constant: 30).isActive = true
         heightlabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
         heightlabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
         

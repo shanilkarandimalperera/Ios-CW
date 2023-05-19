@@ -370,6 +370,17 @@ class ScheduleController: UIViewController {
         Vstack.axis =  .vertical
         return Vstack
     }()
+    let meal: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Check Meal Suggestion", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.backgroundColor = .blue
+        button.layer.shadowOpacity = 1
+        button.layer.cornerRadius = 10
+        button.clipsToBounds = true
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -384,11 +395,18 @@ class ScheduleController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
                 image.isUserInteractionEnabled = true
                 image.addGestureRecognizer(tapGesture)
+        
+        meal.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    @objc func goToNext(){
+        let vc = MealController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func imageTapped() {
@@ -410,32 +428,7 @@ class ScheduleController: UIViewController {
                 self.name.text = todoItem?.name
             }
         }
-        Postservice.shared.fetchSingleitem(id: "et1a") { todoItem in
-            DispatchQueue.main.async {
-                self.focus1.text = todoItem?.focus1
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1a") { todoItem in
-            DispatchQueue.main.async {
-                self.focus3.text = todoItem?.focus3
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1a") { todoItem in
-            DispatchQueue.main.async {
-                self.focus2.text = todoItem?.focus2
-            }
-        }
         
-        Postservice.shared.fetchSingleitem(id: "et1a") { todoItem in
-            DispatchQueue.main.async {
-                self.intro.text = todoItem?.intro
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1a") { todoItem in
-            DispatchQueue.main.async {
-                self.intro1.text = todoItem?.intro1
-            }
-        }
         
         //Excrise 02
         Postservice.shared.fetchSingleitem(id: "et1b") { todoItem in
@@ -448,27 +441,7 @@ class ScheduleController: UIViewController {
                 self.name2.text = todoItem?.name
             }
         }
-        Postservice.shared.fetchSingleitem(id: "et1b") { todoItem in
-            DispatchQueue.main.async {
-                self.focus12.text = todoItem?.focus1
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1b") { todoItem in
-            DispatchQueue.main.async {
-                self.focus22.text = todoItem?.focus2
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1b") { todoItem in
-            DispatchQueue.main.async {
-                self.focus32.text = todoItem?.focus3
-            }
-        }
         
-        Postservice.shared.fetchSingleitem(id: "et1b") { todoItem in
-            DispatchQueue.main.async {
-                self.intro2.text = todoItem?.intro
-            }
-        }
         
         //Excrise 03
         Postservice.shared.fetchSingleitem(id: "et1c") { todoItem in
@@ -481,27 +454,7 @@ class ScheduleController: UIViewController {
                 self.name3.text = todoItem?.name
             }
         }
-        Postservice.shared.fetchSingleitem(id: "et1c") { todoItem in
-            DispatchQueue.main.async {
-                self.focus13.text = todoItem?.focus1
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1c") { todoItem in
-            DispatchQueue.main.async {
-                self.focus23.text = todoItem?.focus2
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1c") { todoItem in
-            DispatchQueue.main.async {
-                self.focus33.text = todoItem?.focus3
-            }
-        }
         
-        Postservice.shared.fetchSingleitem(id: "et1c") { todoItem in
-            DispatchQueue.main.async {
-                self.intro3.text = todoItem?.intro
-            }
-        }
         
         //Excrise 04
         Postservice.shared.fetchSingleitem(id: "et1d") { todoItem in
@@ -512,22 +465,6 @@ class ScheduleController: UIViewController {
         Postservice.shared.fetchSingleitem(id: "et1d") { todoItem in
             DispatchQueue.main.async {
                 self.name4.text = todoItem?.name
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1d") { todoItem in
-            DispatchQueue.main.async {
-                self.focus14.text = todoItem?.focus1
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1d") { todoItem in
-            DispatchQueue.main.async {
-                self.focus24.text = todoItem?.focus2
-            }
-        }
-        
-        Postservice.shared.fetchSingleitem(id: "et1d") { todoItem in
-            DispatchQueue.main.async {
-                self.intro4.text = todoItem?.intro
             }
         }
         
@@ -542,22 +479,7 @@ class ScheduleController: UIViewController {
                 self.name5.text = todoItem?.name
             }
         }
-        Postservice.shared.fetchSingleitem(id: "et1e") { todoItem in
-            DispatchQueue.main.async {
-                self.focus15.text = todoItem?.focus1
-            }
-        }
-        Postservice.shared.fetchSingleitem(id: "et1e") { todoItem in
-            DispatchQueue.main.async {
-                self.focus25.text = todoItem?.focus2
-            }
-        }
         
-        Postservice.shared.fetchSingleitem(id: "et1e") { todoItem in
-            DispatchQueue.main.async {
-                self.intro5.text = todoItem?.intro
-            }
-        }
     }
 
     func addConstraints() {
@@ -593,6 +515,8 @@ class ScheduleController: UIViewController {
         Vstack5.addArrangedSubview(duration5)
         view.addSubview(Hstack5)
         
+        view.addSubview(meal)
+        
     }
 
     func setupConstraints() {
@@ -624,5 +548,9 @@ class ScheduleController: UIViewController {
         Hstack5.topAnchor.constraint(equalTo: Hstack4.bottomAnchor, constant: 20).isActive = true
         Hstack5.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10).isActive = true
         Hstack5.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        
+        meal.topAnchor.constraint(equalTo: Hstack5.bottomAnchor, constant: 40).isActive = true
+        meal.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+        meal.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
     }
 }

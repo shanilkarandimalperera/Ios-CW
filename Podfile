@@ -9,5 +9,6 @@ target 'Ios CW' do
 	pod 'Firebase/Core'
   pod 'Firebase/Database'
 	pod 'FLAnimatedImage'
+	pod 'Charts'
 
 end

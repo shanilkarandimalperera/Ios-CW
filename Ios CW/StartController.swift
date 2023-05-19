@@ -10,6 +10,9 @@ import UIKit
 class StartController: UIViewController {
     var bmiValue: Double?
     var name : String?
+    var age : String?
+    var goal : String?
+    var gender : String?
     
     let bmiLabel: UILabel = {
             let label = UILabel()
@@ -74,6 +77,71 @@ class StartController: UIViewController {
         image.heightAnchor.constraint(equalToConstant: 200).isActive = true
         return image
     }()
+    let agelabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+    let goallabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+    let genderlabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+    let goalA: UILabel = {
+            let label = UILabel()
+        label.text = "Goal:"
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+    let AgeA: UILabel = {
+            let label = UILabel()
+        label.text = "Age:"
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+    let genderA: UILabel = {
+            let label = UILabel()
+        label.text = "Gender:"
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+    let Hstack : UIStackView = {
+        let Hstackw = UIStackView()
+        Hstackw.translatesAutoresizingMaskIntoConstraints = false
+        Hstackw.axis =  .horizontal
+        Hstackw.spacing = 20
+//        Hstackw.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        Hstackw.layer.cornerRadius = 10
+//            Hstackw.layer.masksToBounds = true
+        return Hstackw
+    }()
+    
+    let Vstack : UIStackView = {
+        let vstack = UIStackView()
+        vstack.translatesAutoresizingMaskIntoConstraints = false
+        vstack.axis =  .vertical
+        vstack.alignment = .center
+        return vstack
+    }()
+    let Vstack2 : UIStackView = {
+        let vstack = UIStackView()
+        vstack.translatesAutoresizingMaskIntoConstraints = false
+        vstack.axis =  .vertical
+        vstack.alignment = .center
+        return vstack
+    }()
+    let Vstack3 : UIStackView = {
+        let vstack = UIStackView()
+        vstack.translatesAutoresizingMaskIntoConstraints = false
+        vstack.axis =  .vertical
+        vstack.alignment = .center
+        return vstack
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +156,15 @@ class StartController: UIViewController {
         
         if let name1 = name {
                namelabel.text = "Welcome \(name1) "
+           }
+        if let age1 = age {
+               agelabel.text = (age1)
+           }
+        if let goal1 = goal {
+               goallabel.text = (goal1)
+           }
+        if let gender1 = gender {
+               genderlabel.text = (gender1)
            }
         
         if let bmi = bmiValue {
@@ -106,10 +183,21 @@ class StartController: UIViewController {
                 }
         
     }
-    @objc func goToNext(){
-        let vc = ScheduleController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
+    
+    @objc func goToNext() {
+            if let bmi = bmiValue {
+                if bmi < 18.5 {
+                    let exerciseOneController = ScheduleController()
+                    navigationController?.pushViewController(exerciseOneController, animated: true)
+                } else if bmi >= 18.5 && bmi < 24.9 {
+                    let exerciseTwoController = SchedulenormalController()
+                    navigationController?.pushViewController(exerciseTwoController, animated: true)
+                } else {
+                    let exerciseThreeController = ScheduleoverController()
+                    navigationController?.pushViewController(exerciseThreeController, animated: true)
+                }
+            }
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -123,6 +211,16 @@ class StartController: UIViewController {
         view.addSubview(image)
         view.addSubview(orlabel)
         view.addSubview(createplan)
+        view.addSubview(Hstack)
+        Hstack.addArrangedSubview(Vstack)
+        Vstack.addArrangedSubview(goalA)
+        Vstack.addArrangedSubview(goallabel)
+        Hstack.addArrangedSubview(Vstack2)
+        Vstack2.addArrangedSubview(AgeA)
+        Vstack2.addArrangedSubview(agelabel)
+        Hstack.addArrangedSubview(Vstack3)
+        Vstack3.addArrangedSubview(genderA)
+        Vstack3.addArrangedSubview(genderlabel)
     }
     
     func setupConstrains(){
@@ -136,7 +234,12 @@ class StartController: UIViewController {
 //        bmitext.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
 //        bmitext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
         //bmiLabel.topAnchor.constraint(equalTo: bmitext.bottomAnchor).isActive = true
-        image.topAnchor.constraint(equalTo: bmitext.bottomAnchor, constant: 50).isActive = true
+        Hstack.topAnchor.constraint(equalTo: bmitext.bottomAnchor, constant: 20).isActive = true
+        Hstack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        Hstack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+//        Hstack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        
+        image.topAnchor.constraint(equalTo: Hstack.bottomAnchor, constant: 50).isActive = true
         image.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         start.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 50).isActive = true
