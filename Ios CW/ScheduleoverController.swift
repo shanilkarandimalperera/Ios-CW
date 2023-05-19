@@ -395,8 +395,8 @@ class ScheduleoverController: UIViewController {
         databaseCall()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-                image.isUserInteractionEnabled = true
-                image.addGestureRecognizer(tapGesture)
+                Hstack.isUserInteractionEnabled = true
+                Hstack.addGestureRecognizer(tapGesture)
         
         meal.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
     }

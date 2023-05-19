@@ -182,7 +182,13 @@ class StartController: UIViewController {
             }
                 }
         
+        createplan.addTarget(self, action: #selector(goToPlan), for: .touchUpInside)
+        
     }
+    @objc func goToPlan(){
+            let vc = PlanController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     
     @objc func goToNext() {
             if let bmi = bmiValue {

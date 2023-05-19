@@ -24,6 +24,7 @@
 		60DA5A052A177AE800599521 /* MealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA5A042A177AE800599521 /* MealController.swift */; };
 		60DA5A1A2A17CEFA00599521 /* ExcrisenormaloneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA5A192A17CEFA00599521 /* ExcrisenormaloneController.swift */; };
 		60DA5A1D2A17FAB600599521 /* ExcriseoveroneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA5A1C2A17FAB600599521 /* ExcriseoveroneController.swift */; };
+		60DA5A202A18121800599521 /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA5A1F2A18121800599521 /* PlanController.swift */; };
 		60E45F942A153FCA00316E0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E45F932A153FC900316E0B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		60DA5A042A177AE800599521 /* MealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealController.swift; sourceTree = "<group>"; };
 		60DA5A192A17CEFA00599521 /* ExcrisenormaloneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcrisenormaloneController.swift; sourceTree = "<group>"; };
 		60DA5A1C2A17FAB600599521 /* ExcriseoveroneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcriseoveroneController.swift; sourceTree = "<group>"; };
+		60DA5A1F2A18121800599521 /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
 		60E45F932A153FC900316E0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63D0D5BF95FC5CF3BE7290D3 /* Pods-Ios CW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ios CW.release.xcconfig"; path = "Target Support Files/Pods-Ios CW/Pods-Ios CW.release.xcconfig"; sourceTree = "<group>"; };
 		889D8D75BB7772695FC36F14 /* Pods-Ios CW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ios CW.debug.xcconfig"; path = "Target Support Files/Pods-Ios CW/Pods-Ios CW.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				60DA5A042A177AE800599521 /* MealController.swift */,
 				60DA5A192A17CEFA00599521 /* ExcrisenormaloneController.swift */,
 				60DA5A1C2A17FAB600599521 /* ExcriseoveroneController.swift */,
+				60DA5A1F2A18121800599521 /* PlanController.swift */,
 			);
 			path = "Ios CW";
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				60CA95D329EDBFA200D9C041 /* SceneDelegate.swift in Sources */,
 				60DA59FF2A1755D300599521 /* SchedulenormalController.swift in Sources */,
 				60DA5A1D2A17FAB600599521 /* ExcriseoveroneController.swift in Sources */,
+				60DA5A202A18121800599521 /* PlanController.swift in Sources */,
 				605775EC2A15E4F700BC91A4 /* Postservice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

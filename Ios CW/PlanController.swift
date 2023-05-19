@@ -1,7 +1,4 @@
-//
-//  SchedulenormalController.swift
-//  Ios CW
-//
+
 //  Created by shanilka on 5/16/23.
 //
 //
@@ -9,7 +6,7 @@
 
 import UIKit
 
-class SchedulenormalController: UIViewController {
+class PlanController: UIViewController {
 
     let duration: UILabel = {
         let namelabel = UILabel()
@@ -371,10 +368,10 @@ class SchedulenormalController: UIViewController {
         return Vstack
     }()
     
-    let meal: UIButton = {
+    let datasave: UIButton = {
            let button = UIButton()
            button.translatesAutoresizingMaskIntoConstraints = false
-           button.setTitle("Check Meal Suggestion", for: .normal)
+           button.setTitle("Save", for: .normal)
            button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
            button.backgroundColor = .blue
            button.layer.shadowOpacity = 1
@@ -382,7 +379,26 @@ class SchedulenormalController: UIViewController {
            button.clipsToBounds = true
            return button
        }()
-
+    let restore: UIButton = {
+           let button = UIButton()
+           button.translatesAutoresizingMaskIntoConstraints = false
+           button.setTitle("Resote", for: .normal)
+           button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+           button.backgroundColor = .systemGreen
+           button.layer.shadowOpacity = 1
+           button.layer.cornerRadius = 10
+           button.clipsToBounds = true
+           return button
+       }()
+    
+    let detail: UILabel = {
+        let namelabel = UILabel()
+        namelabel.text = "Press on top of excrise to remove from list"
+        namelabel.translatesAutoresizingMaskIntoConstraints = false
+        namelabel.textColor = .red
+        return namelabel
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -393,92 +409,127 @@ class SchedulenormalController: UIViewController {
 
         databaseCall()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-                Hstack.isUserInteractionEnabled = true
-                Hstack.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hstackTapped))
+            Hstack.addGestureRecognizer(tapGesture)
         
-        meal.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(hstackTapped2))
+        Hstack2.addGestureRecognizer(tapGesture2)
+        
+        let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(hstackTapped3))
+        Hstack3.addGestureRecognizer(tapGesture3)
+        
+        let tapGesture4 = UITapGestureRecognizer(target: self, action: #selector(hstackTapped4))
+        Hstack4.addGestureRecognizer(tapGesture4)
+        
+        let tapGesture5 = UITapGestureRecognizer(target: self, action: #selector(hstackTapped5))
+        Hstack5.addGestureRecognizer(tapGesture5)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
+    @objc func hstackTapped() {
+        // Toggle the visibility of Hstack's subviews
+        for subview in Hstack.arrangedSubviews {
+            subview.isHidden = !subview.isHidden
+        }
+    }
+    @objc func hstackTapped2() {
+        // Toggle the visibility of Hstack's subviews
+        for subview in Hstack2.arrangedSubviews {
+            subview.isHidden = !subview.isHidden
+        }
+    }
+    @objc func hstackTapped3() {
+        // Toggle the visibility of Hstack's subviews
+        for subview in Hstack3.arrangedSubviews {
+            subview.isHidden = !subview.isHidden
+        }
+    }
+    @objc func hstackTapped4() {
+        // Toggle the visibility of Hstack's subviews
+        for subview in Hstack4.arrangedSubviews {
+            subview.isHidden = !subview.isHidden
+        }
+    }
+    @objc func hstackTapped5() {
+        // Toggle the visibility of Hstack's subviews
+        for subview in Hstack5.arrangedSubviews {
+            subview.isHidden = !subview.isHidden
+        }
+    }
     
-    @objc func imageTapped() {
-            let optionController = ExcrisenormaloneController()
-            navigationController?.pushViewController(optionController, animated: true)
+    @objc func goToNext(){
+            let vc = MealController()
+            navigationController?.pushViewController(vc, animated: true)
         }
     
     func databaseCall(){
-        Postservice.shared.fetchAllItemsnormalcat()
-        
+        Postservice.shared.fetchAllItemsovercat()
+
         // Excrise 01
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2a") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3a") { todoItem in
             DispatchQueue.main.async {
                 self.duration.text = todoItem?.duration
             }
         }
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2a") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3a") { todoItem in
             DispatchQueue.main.async {
                 self.name.text = todoItem?.name
             }
         }
         
         //Excrise 02
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2b") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3b") { todoItem in
             DispatchQueue.main.async {
                 self.duration2.text = todoItem?.duration
             }
         }
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2b") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3b") { todoItem in
             DispatchQueue.main.async {
                 self.name2.text = todoItem?.name
             }
         }
         
+        
         //Excrise 03
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2c") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3c") { todoItem in
             DispatchQueue.main.async {
                 self.duration3.text = todoItem?.duration
             }
         }
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2c") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3c") { todoItem in
             DispatchQueue.main.async {
                 self.name3.text = todoItem?.name
             }
         }
-
+        
         //Excrise 04
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2d") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3d") { todoItem in
             DispatchQueue.main.async {
                 self.duration4.text = todoItem?.duration
             }
         }
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2d") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3d") { todoItem in
             DispatchQueue.main.async {
                 self.name4.text = todoItem?.name
             }
         }
         
         // Excrise 05
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2e") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3e") { todoItem in
             DispatchQueue.main.async {
                 self.duration5.text = todoItem?.duration
             }
         }
-        Postservice.shared.fetchSingleitemnormalcat(id: "et2e") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3e") { todoItem in
             DispatchQueue.main.async {
                 self.name5.text = todoItem?.name
             }
         }
     }
-    
-    @objc func goToNext(){
-           let vc = MealController()
-           navigationController?.pushViewController(vc, animated: true)
-       }
-
 
     func addConstraints() {
         view.addSubview(imagecover)
@@ -513,7 +564,9 @@ class SchedulenormalController: UIViewController {
         Vstack5.addArrangedSubview(duration5)
         view.addSubview(Hstack5)
         
-        view.addSubview(meal)
+        view.addSubview(datasave)
+        view.addSubview(restore)
+        view.addSubview(detail)
         
     }
 
@@ -527,7 +580,10 @@ class SchedulenormalController: UIViewController {
         header2.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         header2.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        Hstack.topAnchor.constraint(equalTo: header2.bottomAnchor, constant: 20).isActive = true
+        detail.topAnchor.constraint(equalTo: header2.bottomAnchor, constant: 10).isActive = true
+        detail.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        Hstack.topAnchor.constraint(equalTo: detail.bottomAnchor, constant: 15).isActive = true
         Hstack.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10).isActive = true
         Hstack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         
@@ -546,9 +602,14 @@ class SchedulenormalController: UIViewController {
         Hstack5.topAnchor.constraint(equalTo: Hstack4.bottomAnchor, constant: 20).isActive = true
         Hstack5.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10).isActive = true
         Hstack5.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        datasave.topAnchor.constraint(equalTo: Hstack5.bottomAnchor, constant: 20).isActive = true
+                datasave.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+                datasave.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         
-        meal.topAnchor.constraint(equalTo: Hstack5.bottomAnchor, constant: 40).isActive = true
-        meal.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
-        meal.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        
+        restore.topAnchor.constraint(equalTo: datasave.bottomAnchor, constant: 10).isActive = true
+                restore.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+                restore.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
     }
 }
+
