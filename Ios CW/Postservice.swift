@@ -16,6 +16,7 @@ struct TodoItem{
     var focus3: String
     var intro: String
     var intro1: String
+    var url: String
     
 
     init(KeyId: String, dictonary: [String: Any]) {
@@ -26,6 +27,7 @@ struct TodoItem{
         self.focus3 = dictonary["focus3"] as? String ?? ""
         self.intro = dictonary["intro"] as? String ?? ""
         self.intro1 = dictonary["intro1"] as? String ?? ""
+        self.url = dictonary["url"] as? String ?? ""
     }
 }
 

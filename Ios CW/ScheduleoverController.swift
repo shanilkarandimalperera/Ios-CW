@@ -61,7 +61,7 @@ class ScheduleoverController: UIViewController {
     
     let header2: UILabel = {
         let header2 = UILabel()
-        header2.text = "Excrices"
+        header2.text = "Exercises"
         header2.translatesAutoresizingMaskIntoConstraints = false
         header2.font = UIFont(name: "ArialRoundedMTBold", size: 30)
         header2.textColor = .blue

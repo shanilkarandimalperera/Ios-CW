@@ -40,7 +40,7 @@ class HomeController: UIViewController {
         name.layer.borderWidth = 1.0
         name.layer.cornerRadius = 10.0
         name.layer.borderColor = UIColor.blue.cgColor
-        name.keyboardType = .alphabet
+        name.autocorrectionType = .no
         name.becomeFirstResponder()
         return name
     }()
@@ -78,7 +78,7 @@ class HomeController: UIViewController {
         height.layer.borderWidth = 1.0
         height.layer.cornerRadius = 10.0
         height.layer.borderColor = UIColor.blue.cgColor
-        height.keyboardType = .alphabet
+        height.keyboardType = .numberPad
         height.becomeFirstResponder()
         return height
     }()
@@ -241,18 +241,74 @@ class HomeController: UIViewController {
         
         //nextbutton.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
         nextbutton.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
+        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//                          view.addGestureRecognizer(tapGesture)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+//                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+                
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+                view.addGestureRecognizer(tapGesture)
+        
+        height.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
+        weight.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
+
+        
     }
+    
+    //
+    
+    deinit {
+            // Remove observers when the view controller is deallocated
+            NotificationCenter.default.removeObserver(self)
+        }
+    
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == height || textField == weight {
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        } else {
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        }
+    }
+
+        
+        // Function to handle keyboard appearance and adjust the view's frame
+        @objc private func keyboardWillShow(_ notification: Notification) {
+            guard let userInfo = notification.userInfo,
+                  let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+                  let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else {
+                return
+            }
+            
+            let keyboardHeight = keyboardFrame.height
+            let bottomInset = view.safeAreaInsets.bottom
+            
+            UIView.animate(withDuration: duration) {
+                self.view.frame.origin.y = -keyboardHeight + bottomInset
+            }
+        }
+        
+        // Function to handle keyboard disappearance and reset the view's frame
+        @objc private func keyboardWillHide(_ notification: Notification) {
+            guard let userInfo = notification.userInfo,
+                  let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else {
+                return
+            }
+            
+            UIView.animate(withDuration: duration) {
+                self.view.frame.origin.y = 0
+            }
+        }
+   //OLD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                self.name.becomeFirstResponder()
-//        }
-//    }
+    @objc func dismissKeyboard() {
+                    view.endEditing(true)
+                }
     
     @objc func showOptions() {
         let alertController = UIAlertController(title: "Select Gender", message: nil, preferredStyle: .actionSheet)
@@ -266,6 +322,12 @@ class HomeController: UIViewController {
             self.gender.text = "Female" // Set the selected option into the gender text field
         }
         alertController.addAction(femaleAction)
+        
+        
+        let otherAction = UIAlertAction(title: "Other", style: .default) { _ in
+            self.gender.text = "Other" // Set the selected option into the gender text field
+        }
+        alertController.addAction(otherAction)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)

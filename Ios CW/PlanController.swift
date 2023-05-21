@@ -57,7 +57,7 @@ class PlanController: UIViewController {
     
     let header2: UILabel = {
         let header2 = UILabel()
-        header2.text = "Excrices"
+        header2.text = "Exercises"
         header2.translatesAutoresizingMaskIntoConstraints = false
         header2.font = UIFont(name: "ArialRoundedMTBold", size: 30)
         header2.textColor = .blue
@@ -580,10 +580,10 @@ class PlanController: UIViewController {
         header2.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         header2.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        detail.topAnchor.constraint(equalTo: header2.bottomAnchor, constant: 10).isActive = true
+        detail.topAnchor.constraint(equalTo: header2.bottomAnchor, constant: 8).isActive = true
         detail.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        Hstack.topAnchor.constraint(equalTo: detail.bottomAnchor, constant: 15).isActive = true
+        Hstack.topAnchor.constraint(equalTo: detail.bottomAnchor, constant: 10).isActive = true
         Hstack.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10).isActive = true
         Hstack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         
