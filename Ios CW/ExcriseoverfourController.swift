@@ -9,7 +9,7 @@ import UIKit
 import AVKit
 import FLAnimatedImage
 
-class ExcriseoveroneController: UIViewController {
+class ExcriseoverfourController: UIViewController {
 
     // MARK: - UI Elements
 
@@ -137,7 +137,7 @@ class ExcriseoveroneController: UIViewController {
     }()
     let image: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "fit")
+        image.image = UIImage(named: "Arm")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.heightAnchor.constraint(equalToConstant: 250).isActive = true
         image.layer.borderWidth = 0.3
@@ -312,7 +312,7 @@ class ExcriseoveroneController: UIViewController {
     // MARK: - Video Player
 
     func playVideo() {
-        guard let videoURLString = urllabel.text, let videoURL = URL(string: "https://youtu.be/_l3ySVKYVJ8") else {
+        guard let videoURLString = urllabel.text, let videoURL = URL(string: "https://youtu.be/Bqvmyni_sKQ") else {
                 // Handle invalid video URL
                 return
             }
@@ -344,7 +344,7 @@ class ExcriseoveroneController: UIViewController {
     func databaseCall() {
         Postservice.shared.fetchAllItemsovercat()
 
-        Postservice.shared.fetchSingleitemovercat(id: "et3a") { todoItem in
+        Postservice.shared.fetchSingleitemovercat(id: "et3d") { todoItem in
             DispatchQueue.main.async {
                 self.duration.text = todoItem?.duration
                 self.name.text = todoItem?.name
@@ -358,6 +358,7 @@ class ExcriseoveroneController: UIViewController {
         }
     }
 }
+
 
 
 

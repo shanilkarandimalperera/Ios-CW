@@ -27,6 +27,7 @@ class StartController: UIViewController {
             label.font = UIFont(name: "ArialRoundedMTBold", size: 30)
         label.textColor = .blue
             //label.font = UIFont.systemFont(ofSize: 20)
+        label.numberOfLines = 0
             return label
         }()
     

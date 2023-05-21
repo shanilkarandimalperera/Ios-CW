@@ -392,9 +392,26 @@ class ScheduleController: UIViewController {
 
         databaseCall()
         
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
                 Hstack.isUserInteractionEnabled = true
                 Hstack.addGestureRecognizer(tapGesture)
+        
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(imageTapped2))
+                Hstack2.isUserInteractionEnabled = true
+                Hstack2.addGestureRecognizer(tapGesture2)
+        
+        let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(imageTapped3))
+                Hstack3.isUserInteractionEnabled = true
+                Hstack3.addGestureRecognizer(tapGesture3)
+        
+        let tapGesture4 = UITapGestureRecognizer(target: self, action: #selector(imageTapped4))
+                Hstack4.isUserInteractionEnabled = true
+                Hstack4.addGestureRecognizer(tapGesture4)
+        
+        let tapGesture5 = UITapGestureRecognizer(target: self, action: #selector(imageTapped5))
+                Hstack5.isUserInteractionEnabled = true
+                Hstack5.addGestureRecognizer(tapGesture5)
         
         meal.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
     }
@@ -411,6 +428,23 @@ class ScheduleController: UIViewController {
     
     @objc func imageTapped() {
             let optionController = ExcriseoneController()
+            navigationController?.pushViewController(optionController, animated: true)
+        }
+    @objc func imageTapped2() {
+            let optionController = ExcrisetwoController()
+            navigationController?.pushViewController(optionController, animated: true)
+        }
+    
+    @objc func imageTapped3() {
+            let optionController = ExcrisethreeController()
+            navigationController?.pushViewController(optionController, animated: true)
+        }
+    @objc func imageTapped4() {
+            let optionController = ExcrisefourController()
+            navigationController?.pushViewController(optionController, animated: true)
+        }
+    @objc func imageTapped5() {
+            let optionController = ExcrisefiveController()
             navigationController?.pushViewController(optionController, animated: true)
         }
     

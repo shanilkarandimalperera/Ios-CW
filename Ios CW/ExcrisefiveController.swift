@@ -1,4 +1,3 @@
-
 //
 //  Ios CW
 //
@@ -9,7 +8,7 @@ import UIKit
 import AVKit
 import FLAnimatedImage
 
-class ExcriseoveroneController: UIViewController {
+class ExcrisefiveController: UIViewController {
 
     // MARK: - UI Elements
 
@@ -137,7 +136,7 @@ class ExcriseoveroneController: UIViewController {
     }()
     let image: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "fit")
+        image.image = UIImage(named: "Squats")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.heightAnchor.constraint(equalToConstant: 250).isActive = true
         image.layer.borderWidth = 0.3
@@ -175,24 +174,16 @@ class ExcriseoveroneController: UIViewController {
         playVideo()
         databaseCall()
         
-        
         start.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
 
     }
     @objc func startButtonPressed() {
-        guard let durationText = duration.text else {
+        guard let durationText = duration.text, let durationValue = Int(durationText) else {
             return
         }
         
-        let components = durationText.split(separator: ":")
-        guard components.count == 2, let minutes = Int(components[0]), let seconds = Int(components[1]) else {
-            return
-        }
-        
-        let durationValue = minutes * 60 + seconds
         startCountdown(duration: durationValue)
     }
-
     func startCountdown(duration: Int) {
         start.isEnabled = false
         var countdownDuration = duration
@@ -200,15 +191,10 @@ class ExcriseoveroneController: UIViewController {
         let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else { return }
 
-            let minutes = countdownDuration / 60
-            let seconds = countdownDuration % 60
-
-            let formattedDuration = String(format: "%02d:%02d", minutes, seconds)
-            self.duration.text = formattedDuration
-
             countdownDuration -= 1
+            self.duration.text = "\(countdownDuration)"
 
-            if countdownDuration < 0 {
+            if countdownDuration == 0 {
                 timer.invalidate()
                 self.start.isEnabled = true
             }
@@ -216,7 +202,6 @@ class ExcriseoveroneController: UIViewController {
 
         RunLoop.current.add(timer, forMode: .common)
     }
-
 
 
 
@@ -312,7 +297,7 @@ class ExcriseoveroneController: UIViewController {
     // MARK: - Video Player
 
     func playVideo() {
-        guard let videoURLString = urllabel.text, let videoURL = URL(string: "https://youtu.be/_l3ySVKYVJ8") else {
+        guard let videoURLString = urllabel.text, let videoURL = URL(string: "https://youtu.be/rMvwVtlqjTE") else {
                 // Handle invalid video URL
                 return
             }
@@ -342,9 +327,9 @@ class ExcriseoveroneController: UIViewController {
     // MARK: - Data Retrieval
 
     func databaseCall() {
-        Postservice.shared.fetchAllItemsovercat()
+        Postservice.shared.fetchAllItems()
 
-        Postservice.shared.fetchSingleitemovercat(id: "et3a") { todoItem in
+        Postservice.shared.fetchSingleitem(id: "et1e") { todoItem in
             DispatchQueue.main.async {
                 self.duration.text = todoItem?.duration
                 self.name.text = todoItem?.name
@@ -358,7 +343,6 @@ class ExcriseoveroneController: UIViewController {
         }
     }
 }
-
 
 
 

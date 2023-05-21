@@ -30,6 +30,14 @@
 		60DA5A292A19EC9100599521 /* ExcrisenormalfourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA5A282A19EC9100599521 /* ExcrisenormalfourController.swift */; };
 		60DA5A2C2A19ECFB00599521 /* ExcrisenormalfiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA5A2B2A19ECFB00599521 /* ExcrisenormalfiveController.swift */; };
 		60E45F942A153FCA00316E0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E45F932A153FC900316E0B /* GoogleService-Info.plist */; };
+		60FC020B2A1A40D900CA05A0 /* ExcrisetwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC020A2A1A40D900CA05A0 /* ExcrisetwoController.swift */; };
+		60FC020E2A1A416100CA05A0 /* ExcrisethreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC020D2A1A416100CA05A0 /* ExcrisethreeController.swift */; };
+		60FC02112A1A41E100CA05A0 /* ExcrisefourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC02102A1A41E100CA05A0 /* ExcrisefourController.swift */; };
+		60FC02142A1A424F00CA05A0 /* ExcrisefiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC02132A1A424F00CA05A0 /* ExcrisefiveController.swift */; };
+		60FC02172A1A433600CA05A0 /* ExcriseovertwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC02162A1A433600CA05A0 /* ExcriseovertwoController.swift */; };
+		60FC021A2A1A43B700CA05A0 /* ExcriseoverthreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC02192A1A43B700CA05A0 /* ExcriseoverthreeController.swift */; };
+		60FC021D2A1A445A00CA05A0 /* ExcriseoverfourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC021C2A1A445A00CA05A0 /* ExcriseoverfourController.swift */; };
+		60FC02202A1A472300CA05A0 /* ExcriseoverfiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC021F2A1A472300CA05A0 /* ExcriseoverfiveController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +66,14 @@
 		60DA5A282A19EC9100599521 /* ExcrisenormalfourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcrisenormalfourController.swift; sourceTree = "<group>"; };
 		60DA5A2B2A19ECFB00599521 /* ExcrisenormalfiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcrisenormalfiveController.swift; sourceTree = "<group>"; };
 		60E45F932A153FC900316E0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		60FC020A2A1A40D900CA05A0 /* ExcrisetwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcrisetwoController.swift; sourceTree = "<group>"; };
+		60FC020D2A1A416100CA05A0 /* ExcrisethreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcrisethreeController.swift; sourceTree = "<group>"; };
+		60FC02102A1A41E100CA05A0 /* ExcrisefourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcrisefourController.swift; sourceTree = "<group>"; };
+		60FC02132A1A424F00CA05A0 /* ExcrisefiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcrisefiveController.swift; sourceTree = "<group>"; };
+		60FC02162A1A433600CA05A0 /* ExcriseovertwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcriseovertwoController.swift; sourceTree = "<group>"; };
+		60FC02192A1A43B700CA05A0 /* ExcriseoverthreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcriseoverthreeController.swift; sourceTree = "<group>"; };
+		60FC021C2A1A445A00CA05A0 /* ExcriseoverfourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcriseoverfourController.swift; sourceTree = "<group>"; };
+		60FC021F2A1A472300CA05A0 /* ExcriseoverfiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcriseoverfiveController.swift; sourceTree = "<group>"; };
 		63D0D5BF95FC5CF3BE7290D3 /* Pods-Ios CW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ios CW.release.xcconfig"; path = "Target Support Files/Pods-Ios CW/Pods-Ios CW.release.xcconfig"; sourceTree = "<group>"; };
 		889D8D75BB7772695FC36F14 /* Pods-Ios CW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ios CW.debug.xcconfig"; path = "Target Support Files/Pods-Ios CW/Pods-Ios CW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +142,14 @@
 				60DA5A252A19EC2300599521 /* ExcrisenormalthreeController.swift */,
 				60DA5A282A19EC9100599521 /* ExcrisenormalfourController.swift */,
 				60DA5A2B2A19ECFB00599521 /* ExcrisenormalfiveController.swift */,
+				60FC020A2A1A40D900CA05A0 /* ExcrisetwoController.swift */,
+				60FC020D2A1A416100CA05A0 /* ExcrisethreeController.swift */,
+				60FC02102A1A41E100CA05A0 /* ExcrisefourController.swift */,
+				60FC02132A1A424F00CA05A0 /* ExcrisefiveController.swift */,
+				60FC02162A1A433600CA05A0 /* ExcriseovertwoController.swift */,
+				60FC02192A1A43B700CA05A0 /* ExcriseoverthreeController.swift */,
+				60FC021C2A1A445A00CA05A0 /* ExcriseoverfourController.swift */,
+				60FC021F2A1A472300CA05A0 /* ExcriseoverfiveController.swift */,
 			);
 			path = "Ios CW";
 			sourceTree = "<group>";
@@ -253,8 +277,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D35C7B2A13F9A2006D9C93 /* IntroController.swift in Sources */,
+				60FC02112A1A41E100CA05A0 /* ExcrisefourController.swift in Sources */,
 				60DA5A052A177AE800599521 /* MealController.swift in Sources */,
+				60FC020E2A1A416100CA05A0 /* ExcrisethreeController.swift in Sources */,
+				60FC02172A1A433600CA05A0 /* ExcriseovertwoController.swift in Sources */,
 				60DA5A2C2A19ECFB00599521 /* ExcrisenormalfiveController.swift in Sources */,
+				60FC021A2A1A43B700CA05A0 /* ExcriseoverthreeController.swift in Sources */,
+				60FC020B2A1A40D900CA05A0 /* ExcrisetwoController.swift in Sources */,
 				60D641682A11646100769755 /* ExcriseoneController.swift in Sources */,
 				60D35C7E2A140666006D9C93 /* ScheduleController.swift in Sources */,
 				60DA5A1A2A17CEFA00599521 /* ExcrisenormaloneController.swift in Sources */,
@@ -262,10 +291,13 @@
 				60D6415A2A10A70200769755 /* SplashController.swift in Sources */,
 				60CA95D529EDBFA200D9C041 /* ViewController.swift in Sources */,
 				60DA5A022A17561000599521 /* ScheduleoverController.swift in Sources */,
+				60FC02202A1A472300CA05A0 /* ExcriseoverfiveController.swift in Sources */,
 				60DA5A232A19D39F00599521 /* ExcrisenormaltwoController.swift in Sources */,
 				60D641642A10DC2600769755 /* HomeController.swift in Sources */,
+				60FC02142A1A424F00CA05A0 /* ExcrisefiveController.swift in Sources */,
 				60DA5A292A19EC9100599521 /* ExcrisenormalfourController.swift in Sources */,
 				60CA95D129EDBFA200D9C041 /* AppDelegate.swift in Sources */,
+				60FC021D2A1A445A00CA05A0 /* ExcriseoverfourController.swift in Sources */,
 				603172F12A12A46700A9812C /* StartController.swift in Sources */,
 				60CA95D329EDBFA200D9C041 /* SceneDelegate.swift in Sources */,
 				60DA59FF2A1755D300599521 /* SchedulenormalController.swift in Sources */,
